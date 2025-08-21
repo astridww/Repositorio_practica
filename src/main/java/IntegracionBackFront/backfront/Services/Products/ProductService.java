@@ -12,12 +12,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
+@CrossOrigin
 public class ProductService {
 
     @Autowired
@@ -81,6 +83,7 @@ public class ProductService {
         dto.setFechaIngreso(objEntity.getFechaIngreso());
         dto.setCategoriaId(objEntity.getCategoriaId());
         dto.setUsuarioId(objEntity.getUsuarioId());
+        dto.setImagen_url(objEntity.getImagen_url());
         return dto;
     }
 
@@ -93,6 +96,7 @@ public class ProductService {
         entity.setFechaIngreso(json.getFechaIngreso());
         entity.setCategoriaId(json.getCategoriaId());
         entity.setUsuarioId(json.getUsuarioId());
+        entity.setImagen_url(json.getImagen_url());
         return entity;
     }
 }
